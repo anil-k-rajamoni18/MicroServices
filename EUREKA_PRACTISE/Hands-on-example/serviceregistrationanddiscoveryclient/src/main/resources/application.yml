@@ -1,0 +1,15 @@
+server:
+  port: 9911
+
+spring:
+  application:
+    name: Discovery-Client.
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
+  instance:
+    hostname: localhost
