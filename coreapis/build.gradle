@@ -1,0 +1,40 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.0.6'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'com.reporthub'
+version = '${artifact_version}'
+sourceCompatibility = '17'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	maven {
+		url "${artifactory_contextUrl}/repo"
+		credentials {
+			username = "${artifactory_user}"
+		}
+	}
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation group: 'com.squareup.retrofit2',         name: 'retrofit', 								version: '2.9.0'
+	implementation group: 'com.squareup.retrofit2',         name: 'converter-jackson', 						version: '2.9.0'
+	implementation group: 'org.springframework.boot', 		name: 'spring-boot-starter-webflux', 			version: '3.0.6'
+
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
