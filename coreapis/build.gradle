@@ -15,18 +15,15 @@ configurations {
 }
 
 repositories {
-	maven {
-		url "${artifactory_contextUrl}/repo"
-		credentials {
-			username = "${artifactory_user}"
-		}
-	}
+	mavenCentral()
 }
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation group: 'com.squareup.retrofit2',         name: 'retrofit', 								version: '2.9.0'
 	implementation group: 'com.squareup.retrofit2',         name: 'converter-jackson', 						version: '2.9.0'
+	implementation group: 'com.squareup.retrofit2', 		name: 'converter-gson', 						version: '2.9.0'
+
 	implementation group: 'org.springframework.boot', 		name: 'spring-boot-starter-webflux', 			version: '3.0.6'
 
 	compileOnly 'org.projectlombok:lombok'

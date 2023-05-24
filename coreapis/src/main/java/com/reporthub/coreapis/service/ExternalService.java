@@ -42,7 +42,6 @@ public class ExternalService {
 
     public DSAcessToken getAuthToken() {
         System.out.println(":::::::::::::::: DS AUTH TOKE API URL :::::::::::: "+dsAuthApiurl);
-
         return webClient.
                    post()
                    .uri(uriBuilder -> uriBuilder
@@ -63,8 +62,7 @@ public class ExternalService {
         return webClient
                 .get()
                 .uri(uriBuilder -> uriBuilder
-                        .host("https://free-nba.p.rapidapi.com")
-                        .path("/players/")
+                        .path("/players")
                         .queryParam("page",0)
                         .queryParam("per_page",25)
                         .build())
