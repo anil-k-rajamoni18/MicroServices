@@ -1,0 +1,5 @@
+com\ecommerce\investoryservice\InvestoryServiceApplication.class
+com\ecommerce\investoryservice\model\Inventory.class
+com\ecommerce\investoryservice\controller\InventoryController.class
+com\ecommerce\investoryservice\repository\InventoryRepository.class
+com\ecommerce\investoryservice\service\InventoryService.class

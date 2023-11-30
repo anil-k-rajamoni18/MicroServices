@@ -1,0 +1,11 @@
+docker run -d --name mongodbv2 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=admin123 -p 27018:27017 mongo
+
+
+docker run -it --rm --network host mongo mongosh --host mongodbv2 -u admin -p admin123 --authenticationDatabase admin mongo
+
+
+mongosh -u admin -p admin123 --authenticationDatabase admin mongo
+
+spring.data.mongodb.uri=mongodb://admin:admin123@localhost:27017
+
+https://certificateservices.optum.com/aperture/dashboard/certificate-dashboard
