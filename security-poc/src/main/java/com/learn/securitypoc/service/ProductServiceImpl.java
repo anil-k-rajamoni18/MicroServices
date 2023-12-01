@@ -49,8 +49,8 @@ public class ProductServiceImpl implements ProductService{
     }
 
     public String addUser(UserEntity user) {
-        user.setPassword(encoder.encode(user.getPassword()));
-        log.info("User password after encrpyt {}", user.getPassword());
+        user.setPassword(encoder.encode(user.getPassword()));;
+        log.info("User password after encrypt {}", user.getPassword());
         repository.save(user);
         return String.format("user saved with ID: %s", user.getUserId());
     }

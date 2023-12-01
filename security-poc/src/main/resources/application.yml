@@ -2,13 +2,23 @@ spring:
   application:
     name: product-service-api
   datasource:
-    #url: jdbc:h2:mem:mydb
-    url: jdbc:h2:file:/data/poc
-    username: sa
-    password: pass
-    driverClassName: org.h2.Driver
-  h2:
-    console.enabled: true
+    url: jdbc:mysql://localhost:3306/training
+    username: testuser
+    password: teST123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
   jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
     hibernate.ddl-auto: update
+    properties.hibernate.dialect: org.hibernate.dialect.MySQLDialect
+
+#  datasource:
+#    #url: jdbc:h2:mem:mydb
+#    url: jdbc:h2:file:/data/poc
+#    username: sa
+#    password: pass
+#    driverClassName: org.h2.Driver
+#  h2:
+#    console.enabled: true
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
+#    hibernate.ddl-auto: update

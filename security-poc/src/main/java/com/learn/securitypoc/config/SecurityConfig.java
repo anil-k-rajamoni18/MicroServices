@@ -32,9 +32,11 @@ public class SecurityConfig{
         return new MvcRequestMatcher.Builder(introspector);
     }
 
+
     @Bean
     public UserDetailsService userDetailsService(PasswordEncoder passwordEncoder) { //authentication
-        /*UserDetails admin = User
+        /*
+        UserDetails admin = User
                 .withUsername("admin")
                 .password(passwordEncoder.encode("admin123"))
                 .roles("ADMIN").build();
@@ -50,16 +52,15 @@ public class SecurityConfig{
     }
 
 //    @Bean
-//    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception { //authorization
-//            /*return http.csrf((csrf) -> csrf.disable())
+//    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception { // authorization
+//        /*return http.csrf((csrf) -> csrf.disable())
 //                    .authorizeHttpRequests().requestMatchers("/product/status").permitAll()
 //                    .and()
 //                    .authorizeHttpRequests().requestMatchers("/product/**").authenticated()
 //                    .and().formLogin()
-//                    .and().build();
+//                    .and().build();*/
 //
-//            */
-//        return http.csrf(AbstractHttpConfigurer::disable)
+//       return http.csrf(AbstractHttpConfigurer::disable)
 //                .headers(header -> header.frameOptions().disable())
 //                .authorizeHttpRequests(authorizeHttpRequests -> authorizeHttpRequests
 //                        .requestMatchers(antMatcher("/api/product/status")).permitAll())
@@ -79,8 +80,8 @@ public class SecurityConfig{
 //                .and()
 //                .build();
 //    }
-//
-//
+
+
     @Bean
     public SecurityFilterChain securityFilterChain(final HttpSecurity http) throws Exception {
         final String[] IGNOREENDPOINTS = {"/","/api/login/","/api/product/*","/h2-console/*"};
